@@ -1,0 +1,3 @@
+[submodule "vendor/fennel"]
+	path = vendor/fennel
+	url = https://git.sr.ht/~technomancy/fennel
