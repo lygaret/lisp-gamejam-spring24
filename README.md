@@ -4,7 +4,10 @@
 
 * clone the repo with submodules: `git clone --recurse-submodules`
 * build fennel: `cd vendor/fennel && make`
+
+## run
 * run love from top-level dir: `love .`
+* in emacs with `fennel-mode`, run `C-c C-z` from `game/main.fnl` to launch a repl
 
 ## links
 
