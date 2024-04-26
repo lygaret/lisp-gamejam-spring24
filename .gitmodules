@@ -1,3 +1,6 @@
 [submodule "vendor/fennel"]
 	path = vendor/fennel
 	url = https://git.sr.ht/~technomancy/fennel
+[submodule "vendor/cargo"]
+	path = vendor/cargo
+	url = https://github.com/bjornbytes/cargo.git

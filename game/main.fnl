@@ -1,9 +1,12 @@
 (local fennel (require :lib.fennel))
 (local repl   (require :lib.repl))
+(local cargo  (require :lib.cargo))
 
-(global pp (fn [x] (print (fennel.view x))))
+(global pp     (fn [x] (print (fennel.view x))))
+(global assets (cargo.init { :dir "assets" }))
 
 (fn love.load [args]
+  (assets) ;; pre-load
   (repl.start))
 
 (fn love.draw []
