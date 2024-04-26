@@ -1,8 +1,0 @@
-# gardensim
-
-## run
-
-* clone the repo with submodules: `git clone --recurse-submodules`
-* build fennel: `cd vendor/fennel && make`
-* drop into a nix shell to get love
-* `love .`
