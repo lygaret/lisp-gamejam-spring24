@@ -31,7 +31,7 @@
 
 {:start
  (fn start-repl []
-   (let [code    (love.filesystem.read "lib/stdio.fnl")
+   (let [code    (love.filesystem.read "lib/repl.fnl")
          luac    (love.filesystem.newFileData
                   (fennel.compileString code) "io")
          thread  (love.thread.newThread luac)

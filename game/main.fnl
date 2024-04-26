@@ -1,5 +1,5 @@
 (local fennel (require :lib.fennel))
-(local repl   (require :lib.stdio))
+(local repl   (require :lib.repl))
 
 (global pp (fn [x] (print (fennel.view x))))
 
