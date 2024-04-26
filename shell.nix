@@ -18,9 +18,6 @@ let
 in
 mkShell {
   buildInputs = [
-    fennel
-    fnlfmt
-    lua5_4
     love
   ];
 }
