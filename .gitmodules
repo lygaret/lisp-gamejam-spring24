@@ -4,3 +4,6 @@
 [submodule "vendor/cargo"]
 	path = vendor/cargo
 	url = https://github.com/bjornbytes/cargo.git
+[submodule "vendor/sti"]
+	path = vendor/sti
+	url = https://github.com/karai17/Simple-Tiled-Implementation
