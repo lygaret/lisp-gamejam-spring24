@@ -4,8 +4,8 @@ love.conf = function(t)
    t.identity = "gardensim"
    t.title    = "GardenSim"
 
-   t.window.width = 720
-   t.window.height = 450
+   t.window.width = 640
+   t.window.height = 480
    t.window.vsync = false
 
    t.version = "11.4"

@@ -1,6 +1,7 @@
 -- bootstrap
 local fennel = require("lib.fennel")
 fennel.install({ correlate = true, moduleName = "lib.fennel", useMetadata = true })
+debug.traceback = fennel.traceback
 
 local make_love_searcher = function(env)
   return function(module_name)
