@@ -15,11 +15,6 @@
     (set self.path path)
     (set _G.activity activity)))
 
-(fn manager.proxy [self name ...]
-  (let [method (?. _G.activity name)]
-    (when method
-      (self:safely (partial method _G.activity ...)))))
-
 (fn manager.safely [self f]
   (xpcall f #(self:load-activity self.error-path self.path $ (fennel.traceback))))
 

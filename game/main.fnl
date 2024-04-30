@@ -9,6 +9,11 @@
   (manager:error-activity :game.act.error)
   (manager:load-activity  :game.act.main))
 
-(fn love.draw        [] (manager:proxy :draw))
-(fn love.keypressed [k] (manager:proxy :keypressed k))
-(fn love.update     [d] (manager:proxy :update d))
+(macro proxy [name ...]
+  `(let [method# (?. _G.activity ,name)]
+     (when method#
+       (manager:safely (partial method# _G.activity ,...)))))
+
+(fn love.draw        [] (proxy :draw))
+(fn love.keypressed [k] (proxy :keypressed k))
+(fn love.update     [d] (proxy :update d))
