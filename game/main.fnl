@@ -1,20 +1,14 @@
-(local fennel (require :lib.fennel))
-(local repl   (require :lib.repl))
-(local sti    (require :lib.sti))
-(local cargo  (require :lib.cargo))
+(local fennel      (require :lib.fennel))
+(local repl        (require :lib.repl))
+(local {: manager} (require :lib.activity-manager))
 
-(global pp     (fn [x] (print (fennel.view x))))
-
-(global assets (cargo.init { :dir "assets" }))
-(global map    (sti "assets/farm-stage-map.lua"))
+(global pp (fn [x] (print (fennel.view x))))
 
 (fn love.load [args]
-  (assets) ;; pre-load
-  (repl.start))
+  (repl.start)
+  (manager:error-activity :game.act.error)
+  (manager:load-activity  :game.act.main))
 
-(fn love.update [dt]
-  (map:update dt))
-
-(fn love.draw []
-  (love.graphics.setColor 1 1 1 1)
-  (map:draw 0 0))
+(fn love.draw        [] (manager:proxy :draw))
+(fn love.keypressed [k] (manager:proxy :keypressed k))
+(fn love.update     [d] (manager:proxy :update d))
